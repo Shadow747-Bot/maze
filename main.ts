@@ -1,13 +1,18 @@
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile`, function (sprite, location) {
-    info.startCountdown(40)
+    info.startCountdown(15)
     tiles.setTilemap(tilemap`level2`)
     tiles.placeOnRandomTile(mySprite, assets.tile`myTile1`)
 })
-scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile2`, function (sprite, location) {
+scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile8`, function (sprite, location) {
     game.over(true, effects.confetti)
 })
+scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile2`, function (sprite, location) {
+    info.startCountdown(15)
+    tiles.setTilemap(tilemap`level3`)
+    tiles.placeOnRandomTile(mySprite, assets.tile`myTile7`)
+})
 let mySprite: Sprite = null
-info.startCountdown(30)
+info.startCountdown(15)
 mySprite = sprites.create(img`
     ........................
     .....ffff...............
